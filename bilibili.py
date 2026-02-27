@@ -40,7 +40,7 @@ for page in range(1, 8):
             f.write(video_content)
             print('*******正在保存*******', title)
 
-        COMMAND = f'D:/ffmpeg/ffmpeg-5.0.1-essentials_build/bin/ffmpeg -i video\\{title}.mp3 -i video\\{title}.mp4 -c:v copy -c:a aac -strict experimental video\\{title}output.mp4'
+        COMMAND = f'ffmpeg -i video\\{title}.mp3 -i video\\{title}.mp4 -c:v copy -c:a aac -strict experimental video\\{title}output.mp4'
         subprocess.run(COMMAND, shell=True)
         os.remove(f'video\\{title}.mp3')
         os.remove(f'video\\{title}.mp4')
